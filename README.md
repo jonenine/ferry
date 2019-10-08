@@ -23,7 +23,7 @@
 ![此处输入图片的描述][2]
 配置使用说明:
 ![此处输入图片的描述][3]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;摆渡程序分两部分组成，在内网的部分做web socket客户端和tcp客户端，使用java编写。公网云端的程序做web socket服务端和tcp服务端使用go编写 。<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;摆渡程序分两部分组成，在内网的部分做web socket客户端和tcp客户端，使用java编写。公网云端的程序做web socket服务端和tcp服务端，使用go编写 。<br/>
 
   [1]: https://github.com/jonenine/ferry/blob/master/docs/1.jpg
   [2]: https://github.com/jonenine/ferry/blob/master/docs/2.jpg
