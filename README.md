@@ -17,7 +17,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)	一旦内网程序关闭web socket客户端，云端代理便会关闭socket监听。收放自如<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)	云端程序采用golang编写，性能消耗极小（测试时性能消耗在1%左右），占内存也只占用几十M。租一个阿里的低配虚拟机可以同时将很多内网服务开放到公网。<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)	这是个开源程序（而且是用java和go这两种低成本的语言编写），你可以改成任何你需要的样子，这才是最大的优点。<br/>
-如图所示：<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如图所示：<br/>
 ![此处输入图片的描述][1]
 类图:
 ![此处输入图片的描述][2]
