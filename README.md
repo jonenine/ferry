@@ -14,9 +14,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;于是这样一款反向摆渡工具就诞生了。<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)	内网摆渡程序需要登录到云端代理程序，保证安全性<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)	云端代理程序按照内网请求动态监听端口<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)	一旦内网程序关闭web socket客户端，云端代理便会关闭socket监听。收放自如<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)	云端程序采用golang编写，性能消耗极小（测试时性能消耗在1%左右），占内存也只占用几十M。租一个阿里的低配虚拟机可以同时将很多内网服务开放到公网。<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)	这是个开源程序（而且是用java和go这两种低成本的语言编写），你可以改成任何你需要的样子，这才是最大的优点。<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)	代理程序就一个可执行文件，拷贝到云端执行即可。内网摆渡是一个spring boot程序，配置极简。一共就两个进程，不依赖数据库及其他组件<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)	一旦内网程序关闭web socket客户端，云端代理便会关闭socket监听。收放自如<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)	云端程序采用golang编写，性能消耗极小（测试时性能消耗在1%左右），占内存也只占用几十M。租一个阿里的低配虚拟机可以同时将很多内网服务开放到公网。<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(6)	这是个开源程序（而且是用java和go这两种低成本的语言编写），你可以改成任何你需要的样子，这才是最大的优点。<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如图所示：<br/>
 ![此处输入图片的描述][1]
 类图:
