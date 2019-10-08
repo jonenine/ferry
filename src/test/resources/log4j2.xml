@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+	<Appenders>
+
+		<RollingRandomAccessFile name="RollingRandomAccessFile"
+			fileName="logs/app.log" filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log"
+			immediateFlush="false" append="true" ignoreExceptions="false">
+			<PatternLayout>
+				<Pattern>%d{MM-dd HH:mm:ss.SSS} %16c{1} [%16M:%3L] %p  %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="2000KB" />
+			</Policies>
+		</RollingRandomAccessFile>
+
+		<Async name="ASYNCFile" includeLocation="true">
+			<AppenderRef ref="RollingRandomAccessFile" />
+		</Async>
+
+
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout>
+				<Pattern>%d{MM-dd HH:mm:ss.SSS} %16c{1} [%16M:%3L] %p  %m%n</Pattern>
+			</PatternLayout>
+		</Console>
+	</Appenders>
+	
+	<Loggers>
+		<!-- 经过实验,logger的name是要和类名匹配的,可以实现日志文件按照类型区分 -->
+		<Logger name="xsa" additivity="true" level="trace">
+			<AppenderRef ref="ASYNCFile" />
+		</Logger>
+
+		<Root level="info">
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+</Configuration>
+
