@@ -19,7 +19,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)	这是个开源程序（而且是用java和go这两种低成本的语言编写），你可以改成任何你需要的样子，这才是最大的优点。
 如图所示：
 ![此处输入图片的描述][1]
+类图:
 ![此处输入图片的描述][2]
+配置使用说明:
 ![此处输入图片的描述][3]
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;摆渡程序分两部分组成，在内网的部分做web。
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;service客户端和tcp客户端，使用java编写。公网云端的程序做web。
