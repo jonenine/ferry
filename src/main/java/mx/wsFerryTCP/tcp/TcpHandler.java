@@ -40,6 +40,7 @@ public class TcpHandler extends ChannelInboundHandlerAdapter {
         ByteBuf data = (ByteBuf) msg;
         byte[] bs = new byte[data.readableBytes()];
         data.readBytes(bs);
+        data.release();
         hammal.sendDataToListen(connectId,bs);
     }
 
