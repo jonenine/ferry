@@ -57,7 +57,7 @@ public class WsClient extends WebSocketListener implements IWriter{
     public void write(byte[] bs){
         //这个方法本身是同步的
         webSocket.send(ByteString.of(bs));
-        //what's the fuck!
+        //修改了okHttp3内部缓冲区导致的bug
         while(webSocket.queueSize()>10276683){
             try {
                 Thread.sleep(100);
