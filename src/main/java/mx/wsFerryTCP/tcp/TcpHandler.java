@@ -2,6 +2,7 @@ package mx.wsFerryTCP.tcp;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
@@ -13,6 +14,12 @@ public class TcpHandler extends ChannelInboundHandlerAdapter {
     public TcpHandler(int connectId,NettyClientHammal hammal) {
         this.connectId = connectId;
         this.hammal = hammal;
+    }
+
+    volatile Channel channel;
+
+    public void setChannel(Channel channel) {
+        this.channel = channel;
     }
 
     volatile ChannelHandlerContext context;
@@ -62,7 +69,13 @@ public class TcpHandler extends ChannelInboundHandlerAdapter {
      */
     public void write(byte[] bs){
         ByteBuf buf = Unpooled.wrappedBuffer(bs);
-        context.writeAndFlush(buf);
+        if(context!=null){
+            context.writeAndFlush(buf);
+        }else{
+            channel.writeAndFlush(buf);
+
+        }
+
     }
 
 }

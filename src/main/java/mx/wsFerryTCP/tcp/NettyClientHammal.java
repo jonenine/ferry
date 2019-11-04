@@ -52,6 +52,8 @@ public class NettyClientHammal extends HammalBase {
                     return new ChannelHandler[]{handler};
                 }
             });
+            handler.setChannel(channel);
+
             //一旦连接失败,要从handlerMap去掉
             channel.closeFuture().addListener(new ChannelFutureListener() {
                 @Override
